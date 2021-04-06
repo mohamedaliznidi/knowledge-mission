@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import styles from "./Game.module.css";
 
-function Game({ data }) {
-  
+function Game({ data, Stop }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
@@ -20,24 +20,33 @@ function Game({ data }) {
 
   return (
     <>
-      <div className="app">
+      <div className={styles.main}>
         {showScore ? (
-          <div className="score-section">
-            You scored {score} out of {data.length}
+          <div className={styles.scoreSection}>
+            <div>
+              <h2>
+                You scored {score} out of {data.length}
+              </h2>
+            </div>
+            <div className={styles.buttonSection} >
+              <button className={styles.buttonRep} onClick={Stop}>
+                RePlay
+              </button>
+            </div>
           </div>
         ) : (
           <>
-            <div className="question-section">
-              <div className="question-count">
+            <div className={styles.questionSection}>
+              <div className={styles.questionCount}>
                 <span>Question {currentQuestion + 1}</span>/{data.length}
               </div>
-              <div className="question-text">
+              <div className={styles.questionText}>
                 {data[currentQuestion].questionText}
               </div>
             </div>
-            <div className="answer-section">
+            <div className={styles.answerSection}>
               {data[currentQuestion].answerOptions.map((answerOption) => (
-                <button
+                <button className={styles.button}
                   onClick={() =>
                     handleAnswerOptionClick(answerOption.isCorrect)
                   }

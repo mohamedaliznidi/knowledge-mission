@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Home from "./Components/Home";
-import PlaySettings from "./Components/PlaySettings";
+import Home from "./Components/Home/Home";
+import PlaySettings from "./Components/PlaySettings/PlaySettings";
+import BG from "./Components/BG";
 
 export default function App() {
   const [settings, setSettings] = useState({
@@ -10,7 +11,6 @@ export default function App() {
   });
 
   const Play = (details) => {
-    console.log(details);
     setSettings({
       amount: details.amount,
       category: details.category,
@@ -19,19 +19,28 @@ export default function App() {
   };
 
   const Stop = () => {
-    console.log("Stop");
+    setSettings({
+      amount: 0,
+      category: 0,
+      difficulty: "",
+    });
   };
+
   return (
     <div>
-      {settings.amount !== 0 ? (
-        <Home
-          amount={settings.amount}
-          category={settings.category}
-          difficulty={settings.difficulty}
-        />
-      ) : (
-        <PlaySettings Play={Play} />
-      )}
+      <BG />
+      <div>
+        {settings.amount !== 0 ? (
+          <Home
+            amount={settings.amount}
+            category={settings.category}
+            difficulty={settings.difficulty}
+            Stop={Stop}
+          />
+        ) : (
+          <PlaySettings Play={Play} />
+        )}
+      </div>
     </div>
   );
 }

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Game from "./Game";
-import { Questions } from "../Api/index";
+import Game from "../Game/Game";
+import { Questions } from "../../Api/index";
 
-function Home({amount ,category ,difficulty }) {
+function Home({ amount, category, difficulty,Stop }) {
   const [ready, setReady] = useState(false);
   const [datas, setDatas] = useState();
-  const url =
-    "https://opentdb.com/api.php?amount=5&category=26&difficulty=medium";
+  const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`;
 
   useEffect(() => {
     async function fetch() {
@@ -16,12 +15,15 @@ function Home({amount ,category ,difficulty }) {
       setReady(true);
     }
     fetch();
-   
   }, []);
 
-  
-
-  return ready ? <div><Game key={datas.id} data={datas}/></div> : <p>Loading...</p>;
+  return ready ? (
+    <div>
+      <Game key={datas.id} data={datas} Stop={Stop} />
+    </div>
+  ) : (
+    <p>Loading...</p>
+  );
 }
 
 export default Home;

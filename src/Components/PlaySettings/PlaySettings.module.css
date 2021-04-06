@@ -1,0 +1,77 @@
+.main {
+  background-color: #252d4a;
+  width: 450px;
+  min-height: 200px;
+  height: min-content;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-evenly;
+  color: black;
+}
+.amountPicker {
+  margin-top: -5px;
+  margin-bottom: 5px;
+  font-size: 28px;
+  width: 20%;
+  color: #ffffff;
+  background-color: #252d4a;
+  border-radius: 15px;
+  display: flex;
+  padding: 5px;
+  justify-content: flex-start;
+  align-items: center;
+  border: 5px solid #234668;
+}
+.Amount {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.questionCount {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.Items {
+  margin-left: 10%;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.diffItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 50%;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #252d4a;
+  border-radius: 15px;
+  display: flex;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #234668;
+  cursor: pointer;
+  justify-self: end;
+}
+
+.button:hover {
+  background-color: #555e7d;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button svg {
+  margin-right: 5px;
+}
