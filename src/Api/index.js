@@ -13,6 +13,7 @@ export function Questions(results) {
         at[j] = {
           answerText: results[i].incorrect_answers[k],
           isCorrect: false,
+          key: j,
         };
         k++;
       } else if (j === 3) {
@@ -21,6 +22,7 @@ export function Questions(results) {
         at[j] = {
           answerText: results[i].correct_answer,
           isCorrect: true,
+          key: j,
         };
         correct = true;
       } else if (rand) {
@@ -29,6 +31,7 @@ export function Questions(results) {
         at[j] = {
           answerText: results[i].correct_answer,
           isCorrect: true,
+          key: j,
         };
         correct = true;
       } else {
@@ -37,13 +40,14 @@ export function Questions(results) {
         at[j] = {
           answerText: results[i].incorrect_answers[j],
           isCorrect: false,
+          key: j,
         };
         k++;
       }
     }
 
     const e = {
-      id: i,
+      key: i,
       questionText: results[i].question,
       answerOptions: at,
     };

@@ -14,7 +14,6 @@ function PlaySettings({ Play }) {
   };
   return (
     <div>
-      <h1>Big Title</h1>
       <form onSubmit={submitHandler} className={styles.main}>
         <div className="form-inner">
           <div className={styles.Amount}>

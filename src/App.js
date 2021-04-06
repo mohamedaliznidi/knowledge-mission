@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Home from "./Components/Home/Home";
 import PlaySettings from "./Components/PlaySettings/PlaySettings";
-import BG from "./Components/BG";
 
 export default function App() {
   const [settings, setSettings] = useState({
@@ -28,7 +27,6 @@ export default function App() {
 
   return (
     <div>
-      <BG />
       <div>
         {settings.amount !== 0 ? (
           <Home
