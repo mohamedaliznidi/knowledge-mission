@@ -20,7 +20,6 @@ function Game({ data }) {
 
   return (
     <>
-      <h1>data data data datatatatatata</h1>
       <div className="app">
         {showScore ? (
           <div className="score-section">

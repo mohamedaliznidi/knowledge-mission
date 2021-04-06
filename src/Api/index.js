@@ -1,4 +1,3 @@
-
 export function Questions(results) {
   var q = [];
   for (let i = 0; i < results.length; i++) {
@@ -44,13 +43,11 @@ export function Questions(results) {
     }
 
     const e = {
-      id:i,
+      id: i,
       questionText: results[i].question,
       answerOptions: at,
     };
-    console.log("eeeee");
     q.push(e);
   }
-  console.log("qqqqqqq");
   return q;
 }

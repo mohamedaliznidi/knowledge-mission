@@ -1,33 +1,37 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Game from "./Components/Game";
-import { Questions } from "./Api";
-// function App() {
-//   const quest = fetchData(3, 26, "medium");
-//   console.log(quest);
-//   return <div></div>;
-// }
+import React, { useState } from "react";
+import Home from "./Components/Home";
+import PlaySettings from "./Components/PlaySettings";
 
-function App() {
-  const [ready, setReady] = useState(false);
-  const [datas, setDatas] = useState();
-  const url =
-    "https://opentdb.com/api.php?amount=5&category=26&difficulty=medium";
+export default function App() {
+  const [settings, setSettings] = useState({
+    amount: 0,
+    category: 0,
+    difficulty: "",
+  });
 
-  useEffect(() => {
-    async function fetch() {
-      const response = await axios.get(url);
-      setDatas(Questions(response.data.results));
-      setReady(true);
-    }
-    fetch();
-  }, []);
+  const Play = (details) => {
+    console.log(details);
+    setSettings({
+      amount: details.amount,
+      category: details.category,
+      difficulty: details.difficulty,
+    });
+  };
 
-  const game = datas.map((data) => <Game key={data.id} data={data} />);
-
-  return ready ? <div>{game}</div> : <p>Loading...</p>;
+  const Stop = () => {
+    console.log("Stop");
+  };
+  return (
+    <div>
+      {settings.amount !== 0 ? (
+        <Home
+          amount={settings.amount}
+          category={settings.category}
+          difficulty={settings.difficulty}
+        />
+      ) : (
+        <PlaySettings Play={Play} />
+      )}
+    </div>
+  );
 }
-
-export default App;
-// // <BG></BG>
-// //<div>{play ? <Game qs={results} /> : <Home />}</div>
