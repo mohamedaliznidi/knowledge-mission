@@ -13,8 +13,8 @@ function PlaySettings({ Play }) {
     Play(details);
   };
   return (
-    <div>
-      <form onSubmit={submitHandler} className={styles.main}>
+    <form onSubmit={submitHandler}>
+      <div className={styles.main}>
         <div className="form-inner">
           <div className={styles.Amount}>
             <div htmlFor="amount" className={styles.questionCount}>
@@ -119,12 +119,12 @@ function PlaySettings({ Play }) {
               </div>
             </div>
           </div>
-          <button type="submit" value="Play" className={styles.button}>
-            Play
-          </button>
         </div>
-      </form>
-    </div>
+        <button type="submit" value="Play" className={styles.button}>
+          Play
+        </button>
+      </div>
+    </form>
   );
 }
 
