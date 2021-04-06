@@ -3,7 +3,7 @@ import axios from "axios";
 import Game from "../Game/Game";
 import { Questions } from "../../Api/index";
 
-function Home({ amount, category, difficulty,Stop }) {
+function Home({ amount, category, difficulty, Stop }) {
   const [ready, setReady] = useState(false);
   const [datas, setDatas] = useState();
   const url = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`;
@@ -15,7 +15,7 @@ function Home({ amount, category, difficulty,Stop }) {
       setReady(true);
     }
     fetch();
-  }, []);
+  }, [url]);
 
   return ready ? (
     <div>

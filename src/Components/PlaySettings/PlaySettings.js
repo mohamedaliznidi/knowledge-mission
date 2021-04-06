@@ -38,6 +38,7 @@ function PlaySettings({ Play }) {
             </div>
             <div className={styles.Items}>
               <input
+                className={styles.input}
                 type="radio"
                 name="Celebrities"
                 id="category"

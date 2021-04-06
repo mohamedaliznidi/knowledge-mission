@@ -24,6 +24,9 @@
   align-items: center;
   border: 5px solid #234668;
 }
+.input:active{
+  border: 5px solid #234668
+}
 .Amount {
   width: 100%;
   display: flex;

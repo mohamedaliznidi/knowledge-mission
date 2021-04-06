@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Game.module.css";
 
-function Game({ data, Stop }) {
+function Game({key, data, Stop }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
