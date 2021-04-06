@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Game from "../Game/Game";
 import { Questions } from "../../Api/index";
+import "./Home.css";
 
 function Home({ amount, category, difficulty, Stop }) {
   const [ready, setReady] = useState(false);
