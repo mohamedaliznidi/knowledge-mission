@@ -92,45 +92,12 @@
   cursor: pointer;
 }
 
-.correct {
-  margin: 5px;
-  width: 100%;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #294f32;
-  border-radius: 15px;
-  display: flex;
-  padding: 5px;
-  justify-content: flex-start;
-  align-items: center;
-  border: 5px solid #234668;
-  cursor: pointer;
-}
-.incorrect {
-  margin: 5px;
-  width: 100%;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #733232;
-  border-radius: 15px;
-  display: flex;
-  padding: 5px;
-  justify-content: flex-start;
-  align-items: center;
-  border: 5px solid #234668;
-  cursor: pointer;
-}
-
-
 .button:hover {
   background-color: #555e7d;
 }
 .buttonRep:hover {
   background-color: #555e7d;
 }
-
-
-
 
 @media (max-width: 600px) {
   .main {
